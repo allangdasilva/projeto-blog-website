@@ -3,4 +3,83 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+}
+
+header .header-nav {
+  position: relative;
+}
+header .header-nav .nav-container-01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+header .header-nav .nav-container-01 .menu-icon-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 26px;
+  width: 30px;
+}
+header .header-nav .nav-container-01 .menu-icon-content .menu-icon {
+  position: relative;
+  height: 3px;
+  width: 20px;
+  border-radius: 3px;
+  background-color: #19065E;
+}
+header .header-nav .nav-container-01 .menu-icon-content .menu-icon::after, header .header-nav .nav-container-01 .menu-icon-content .menu-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 20px;
+  border-radius: 3px;
+  background-color: #19065E;
+}
+header .header-nav .nav-container-01 .menu-icon-content .menu-icon::after {
+  top: -6px;
+}
+header .header-nav .nav-container-01 .menu-icon-content .menu-icon::before {
+  top: 6px;
+}
+header .header-nav .nav-container-01 .menu-icon-content .menu-click {
+  position: absolute;
+  height: 26px;
+  width: 30px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+header .header-nav .nav-container-01 .menu-logo-content a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header-nav .nav-container-01 .menu-logo-content a img {
+  width: 60%;
+  transition: transform 0.3s;
+}
+header .header-nav .nav-container-01 .menu-logo-content a img:hover {
+  transform: translateY(-2px);
+}
+header .header-nav .nav-container-01 .menu-search-content a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  margin-inline: 5px;
+}
+header .header-nav .nav-container-01 .menu-search-content a span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-image: linear-gradient(90deg, #6F04D9, #19065E);
+}
+header .header-nav .nav-container-01 .menu-search-content a span svg {
+  width: 50%;
 }/*# sourceMappingURL=style.css.map */
