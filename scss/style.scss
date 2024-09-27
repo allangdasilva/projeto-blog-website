@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
     font-family: "Rubik", sans-serif;
 }
 header {
@@ -104,7 +105,92 @@ header {
         }
 
         .nav-container-02 {
+            position: fixed;
+            top: 0;
+            //transform: translateX(-300px);
 
+            height: 100%;
+            width: 300px;
+
+            padding: 20px;
+
+            overflow: auto;
+
+            background-color: red;
+
+            .menu-logo-content {
+                @include flex-center;
+                padding-block: 15px;
+
+                a {
+                    @include flex-center;
+
+                    img {
+                        width: 60%;
+                    }
+                }
+                
+            }
+            .menu-list-content {
+                ul {
+                    li {
+                        @include flex-center;
+                        justify-content: space-between;
+
+                        padding: 15px 0 15px 15px;
+
+                        &:hover {
+                            
+                        }
+
+                        span {
+                            font-size: $header-font-size;
+                            font-weight: 500;
+                            color: $dark-purple;
+
+                            svg {
+                                @include flex-center;
+                            }
+                        }
+                        a {
+                            display: block;
+                            width: 100%;
+                            text-decoration: none;
+                        }
+
+                    }
+                    .li-drop {
+                        ul {
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+            .menu-login-content {
+                @include flex-center;
+                padding-top: 15px;
+
+                button {
+                    @include flex-center;
+                    gap: 5px;
+
+                    padding: 5px 30px;
+                    border: none;
+                    border-radius: 8px;
+
+                    cursor: pointer;
+
+                    color: $white;
+                    background-image: linear-gradient(90deg, $purple, $dark-purple);
+
+                    span {
+                        font-weight: 500;
+                        svg {
+                            @include flex-center;
+                        }
+                    }
+                }
+            }
         }
         
         .nav-container-03 {
