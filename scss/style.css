@@ -87,37 +87,47 @@ header .header-nav .nav-container-01 .menu-search-content a span svg {
 header .header-nav .nav-container-02 {
   position: fixed;
   top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+header .header-nav .nav-container-02 .nav-content-container {
+  position: fixed;
+  top: 0;
   height: 100%;
   width: 300px;
-  padding: 20px;
+  transform: translateX(-300px);
   overflow: auto;
-  background-color: red;
+  padding: 20px;
+  background-color: #FFFFFF;
+  transition: transform 0.2s;
 }
-header .header-nav .nav-container-02 .menu-logo-content {
+header .header-nav .nav-container-02 .nav-content-container .menu-logo-content {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-block: 15px;
 }
-header .header-nav .nav-container-02 .menu-logo-content a {
+header .header-nav .nav-container-02 .nav-content-container .menu-logo-content a {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .header-nav .nav-container-02 .menu-logo-content a img {
+header .header-nav .nav-container-02 .nav-content-container .menu-logo-content a img {
   width: 60%;
 }
-header .header-nav .nav-container-02 .menu-list-content ul {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul {
   width: 100%;
 }
-header .header-nav .nav-container-02 .menu-list-content ul li {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul li {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
   padding: 15px 0 15px 15px;
 }
-header .header-nav .nav-container-02 .menu-list-content ul li span {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul li span {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -125,47 +135,50 @@ header .header-nav .nav-container-02 .menu-list-content ul li span {
   font-weight: 500;
   color: #19065E;
 }
-header .header-nav .nav-container-02 .menu-list-content ul li a {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul li a {
   display: block;
   width: 100%;
   text-decoration: none;
 }
-header .header-nav .nav-container-02 .menu-list-content ul .li-drop {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul .li-drop {
   flex-direction: column;
   align-items: flex-start;
-  cursor: pointer;
 }
-header .header-nav .nav-container-02 .menu-list-content ul .li-drop:hover ul {
-  max-height: 87px;
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul .li-drop:hover ul {
+  max-height: 117px;
   opacity: 1;
   pointer-events: initial;
 }
-header .header-nav .nav-container-02 .menu-list-content ul .li-drop ul {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul .li-drop span {
+  cursor: pointer;
+}
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul .li-drop ul {
   max-height: 0;
   opacity: 0;
   pointer-events: none;
-  transition: 0.3s;
+  overflow: hidden;
+  transition: max-height 0.3s, opacity 0.2s;
 }
-header .header-nav .nav-container-02 .menu-list-content ul .li-drop ul li {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul .li-drop ul li {
   padding: 0px;
 }
-header .header-nav .nav-container-02 .menu-list-content ul .li-drop ul li a {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul .li-drop ul li a {
   display: block;
   width: 100%;
-  padding-block: 5px;
+  padding-block: 10px;
   color: #19065E;
   transition: 0.2s;
 }
-header .header-nav .nav-container-02 .menu-list-content ul .li-drop ul li a:hover {
+header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul .li-drop ul li a:hover {
   color: #6F04D9;
 }
-header .header-nav .nav-container-02 .menu-login-content {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 15px;
 }
-header .header-nav .nav-container-02 .menu-login-content button {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,11 +190,34 @@ header .header-nav .nav-container-02 .menu-login-content button {
   color: #FFFFFF;
   background-image: linear-gradient(90deg, #6F04D9, #19065E);
 }
-header .header-nav .nav-container-02 .menu-login-content button span {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content button span {
   font-weight: 500;
 }
-header .header-nav .nav-container-02 .menu-login-content button span svg {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content button span svg {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+header .header-nav .nav-container-02 .menu-close-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  background-color: #19065E;
+  transition: 0.4s;
+}
+header .header-nav .nav-container-02-active {
+  pointer-events: initial;
+}
+header .header-nav .nav-container-02-active .nav-content-container-active {
+  transform: translateX(0);
+}
+header .header-nav .nav-container-02-active .menu-close-content-active {
+  pointer-events: initial;
+  opacity: 0.3;
+  transition: 0.4s;
 }/*# sourceMappingURL=style.css.map */

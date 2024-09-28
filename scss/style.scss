@@ -107,125 +107,172 @@ header {
         .nav-container-02 {
             position: fixed;
             top: 0;
-            //transform: translateX(-300px);
+            left: 0;
 
             height: 100%;
-            width: 300px;
+            width: 100%;
 
-            padding: 20px;
+            pointer-events: none;
 
-            overflow: auto;
+            .nav-content-container {
+                position: fixed;
+                top: 0;
 
-            background-color: red;
+                height: 100%;
+                width: 300px;
+                transform: translateX(-300px);
 
-            .menu-logo-content {
-                @include flex-center;
-                padding-block: 15px;
+                overflow: auto;
 
-                a {
+                padding: 20px;
+
+                background-color: $white;
+
+                transition: transform .2s;
+
+                .menu-logo-content {
                     @include flex-center;
-
-                    img {
-                        width: 60%;
-                    }
-                }
-                
-            }
-            .menu-list-content {
-                ul {
-                    width: 100%;
-                    
-                    li {
+                    padding-block: 15px;
+    
+                    a {
                         @include flex-center;
-                        justify-content: space-between;
-
-                        padding: 15px 0 15px 15px;
-
-                        span {
-                            display: flex;
-                            justify-content: space-between;
-
-                            width: 100%;
-
-                            font-size: $header-font-size;
-                            font-weight: 500;
-
-                            color: $dark-purple;
+    
+                        img {
+                            width: 60%;
                         }
-                        a {
-                            display: block;
-                            width: 100%;
-                            text-decoration: none;
-                        }
-
                     }
-                    .li-drop {
-                        flex-direction: column;
-                        align-items: flex-start;
-
-                        cursor: pointer;
-
-                        &:hover {
-                            ul {
-                                max-height: 87px;
-                                opacity: 1;
-                                pointer-events: initial;
+                    
+                }
+                .menu-list-content {
+                    ul {
+                        width: 100%;
+                        
+                        li {
+                            @include flex-center;
+                            justify-content: space-between;
+    
+                            padding: 15px 0 15px 15px;
+    
+                            span {
+                                display: flex;
+                                justify-content: space-between;
+    
+                                width: 100%;
+    
+                                font-size: $header-font-size;
+                                font-weight: 500;
+    
+                                color: $dark-purple;
                             }
+                            a {
+                                display: block;
+                                width: 100%;
+                                text-decoration: none;
+                            }
+    
                         }
+                        .li-drop {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            
+                            &:hover {
+                                ul {
+                                    max-height: 117px;
+                                    opacity: 1;
+                                    pointer-events: initial;
+                                }
+                            }
 
-                        ul {
-                            max-height: 0;
-                            opacity: 0;
-                            pointer-events: none;
-
-                            //overflow: auto;
-                            transition: .3s;
-
-                            li {
-                                padding: 0px;
-
-                                a {
-                                    display: block;
-                                    width: 100%;
-                                    padding-block: 5px;
-
-                                    color: $dark-purple;
-
-                                    transition: .2s;
-
-                                    &:hover {
-                                        color: $purple;
+                            span {
+                                cursor: pointer;
+                            }
+    
+                            ul {
+                                max-height: 0;
+                                opacity: 0;
+                                pointer-events: none;
+                                
+                                overflow: hidden;
+                                //overflow: auto;
+                                transition: max-height .3s, opacity .2s;
+    
+                                li {
+                                    padding: 0px;
+    
+                                    a {
+                                        display: block;
+                                        width: 100%;
+                                        padding-block: 10px;
+    
+                                        color: $dark-purple;
+    
+                                        transition: .2s;
+    
+                                        &:hover {
+                                            color: $purple;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-            }
-            .menu-login-content {
-                @include flex-center;
-                padding-top: 15px;
-
-                button {
+                .menu-login-content {
                     @include flex-center;
-                    gap: 5px;
-
-                    padding: 5px 30px;
-                    border: none;
-                    border-radius: 8px;
-
-                    cursor: pointer;
-
-                    color: $white;
-                    background-image: linear-gradient(90deg, $purple, $dark-purple);
-
-                    span {
-                        font-weight: 500;
-                        svg {
-                            @include flex-center;
+                    padding-top: 15px;
+    
+                    button {
+                        @include flex-center;
+                        gap: 5px;
+    
+                        padding: 5px 30px;
+                        border: none;
+                        border-radius: 8px;
+    
+                        cursor: pointer;
+    
+                        color: $white;
+                        background-image: linear-gradient(90deg, $purple, $dark-purple);
+    
+                        span {
+                            font-weight: 500;
+                            svg {
+                                @include flex-center;
+                            }
                         }
                     }
                 }
+            }
+            .menu-close-content {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                height: 100%;
+                width: 100%;
+
+                z-index: -1;
+
+                opacity: 0;
+                pointer-events: none;
+
+                background-color: $dark-purple;
+
+                transition: .4s;
+            }
+        }
+        
+        .nav-container-02-active {
+            pointer-events: initial;
+            
+            .nav-content-container-active {
+                transform: translateX(0);
+            }
+            .menu-close-content-active {
+                pointer-events: initial;
+                opacity: .3;
+
+                transition: .4s;
             }
         }
         
