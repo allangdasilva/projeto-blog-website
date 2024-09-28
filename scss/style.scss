@@ -133,24 +133,24 @@ header {
             }
             .menu-list-content {
                 ul {
+                    width: 100%;
+                    
                     li {
                         @include flex-center;
                         justify-content: space-between;
 
                         padding: 15px 0 15px 15px;
 
-                        &:hover {
-                            
-                        }
-
                         span {
+                            display: flex;
+                            justify-content: space-between;
+
+                            width: 100%;
+
                             font-size: $header-font-size;
                             font-weight: 500;
-                            color: $dark-purple;
 
-                            svg {
-                                @include flex-center;
-                            }
+                            color: $dark-purple;
                         }
                         a {
                             display: block;
@@ -160,8 +160,44 @@ header {
 
                     }
                     .li-drop {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        cursor: pointer;
+
+                        &:hover {
+                            ul {
+                                max-height: 87px;
+                                opacity: 1;
+                                pointer-events: initial;
+                            }
+                        }
+
                         ul {
-                            position: absolute;
+                            max-height: 0;
+                            opacity: 0;
+                            pointer-events: none;
+
+                            //overflow: auto;
+                            transition: .3s;
+
+                            li {
+                                padding: 0px;
+
+                                a {
+                                    display: block;
+                                    width: 100%;
+                                    padding-block: 5px;
+
+                                    color: $dark-purple;
+
+                                    transition: .2s;
+
+                                    &:hover {
+                                        color: $purple;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
