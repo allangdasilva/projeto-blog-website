@@ -12,6 +12,11 @@ header {
     .header-nav {
         position: relative;
 
+        // Desktop
+        @include desktop {
+            @include flex-center;
+        }
+
         .nav-container-01 {
             @include flex-center;
             justify-content: space-between;
@@ -25,6 +30,11 @@ header {
 
                 height: 26px;
                 width: 30px;
+
+                // Desktop
+                @include desktop {
+                    display: none;
+                }
 
                 .menu-icon {
                     position: relative;
@@ -78,6 +88,11 @@ header {
                 }
             }
             .menu-search-content {
+                // Desktop
+                @include desktop {
+                    display: none;
+                }
+
                 a {
                     display: block;
 
@@ -114,6 +129,12 @@ header {
 
             pointer-events: none;
 
+            // Desktop
+            @include desktop {
+                position: initial;
+                pointer-events: initial;
+            }
+
             .nav-content-container {
                 position: fixed;
                 top: 0;
@@ -130,9 +151,23 @@ header {
 
                 transition: transform .2s;
 
+                // Desktop
+                @include desktop {
+                    position: initial;
+
+                    transform: translateX(0);
+
+                    overflow: initial;
+                }
+
                 .menu-logo-content {
                     @include flex-center;
                     padding-block: 15px;
+
+                    // Desktop
+                    @include desktop {
+                        display: none;
+                    }
     
                     a {
                         @include flex-center;
@@ -146,6 +181,11 @@ header {
                 .menu-list-content {
                     ul {
                         width: 100%;
+
+                        // Desktop
+                        @include desktop {
+                            display: flex;
+                        }
                         
                         li {
                             @include flex-center;
@@ -220,7 +260,12 @@ header {
                 .menu-login-content {
                     @include flex-center;
                     padding-top: 15px;
-    
+                    
+                    // Desktop
+                    @include desktop {
+                        display: none;
+                    }
+
                     button {
                         @include flex-center;
                         gap: 5px;
@@ -277,7 +322,22 @@ header {
         }
         
         .nav-container-03 {
+            display: none;
 
+            // Desktop
+            @include desktop {
+                display: block;
+            }
+
+            .menu-button-content {
+
+                button {
+                    height: 30px;
+                    width: 30px;
+
+                    background-color: red;
+                }
+            }
         }
     }
 }

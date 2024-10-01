@@ -9,6 +9,13 @@
 header .header-nav {
   position: relative;
 }
+@media screen and (min-width: 1100px) {
+  header .header-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 header .header-nav .nav-container-01 {
   display: flex;
   justify-content: center;
@@ -24,6 +31,11 @@ header .header-nav .nav-container-01 .menu-icon-content {
   position: relative;
   height: 26px;
   width: 30px;
+}
+@media screen and (min-width: 1100px) {
+  header .header-nav .nav-container-01 .menu-icon-content {
+    display: none;
+  }
 }
 header .header-nav .nav-container-01 .menu-icon-content .menu-icon {
   position: relative;
@@ -66,6 +78,11 @@ header .header-nav .nav-container-01 .menu-logo-content a img {
 header .header-nav .nav-container-01 .menu-logo-content a img:hover {
   transform: translateY(-2px);
 }
+@media screen and (min-width: 1100px) {
+  header .header-nav .nav-container-01 .menu-search-content {
+    display: none;
+  }
+}
 header .header-nav .nav-container-01 .menu-search-content a {
   display: block;
   height: 40px;
@@ -92,6 +109,12 @@ header .header-nav .nav-container-02 {
   width: 100%;
   pointer-events: none;
 }
+@media screen and (min-width: 1100px) {
+  header .header-nav .nav-container-02 {
+    position: initial;
+    pointer-events: initial;
+  }
+}
 header .header-nav .nav-container-02 .nav-content-container {
   position: fixed;
   top: 0;
@@ -103,11 +126,23 @@ header .header-nav .nav-container-02 .nav-content-container {
   background-color: #FFFFFF;
   transition: transform 0.2s;
 }
+@media screen and (min-width: 1100px) {
+  header .header-nav .nav-container-02 .nav-content-container {
+    position: initial;
+    transform: translateX(0);
+    overflow: initial;
+  }
+}
 header .header-nav .nav-container-02 .nav-content-container .menu-logo-content {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-block: 15px;
+}
+@media screen and (min-width: 1100px) {
+  header .header-nav .nav-container-02 .nav-content-container .menu-logo-content {
+    display: none;
+  }
 }
 header .header-nav .nav-container-02 .nav-content-container .menu-logo-content a {
   display: flex;
@@ -119,6 +154,11 @@ header .header-nav .nav-container-02 .nav-content-container .menu-logo-content a
 }
 header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul {
   width: 100%;
+}
+@media screen and (min-width: 1100px) {
+  header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul {
+    display: flex;
+  }
 }
 header .header-nav .nav-container-02 .nav-content-container .menu-list-content ul li {
   display: flex;
@@ -178,6 +218,11 @@ header .header-nav .nav-container-02 .nav-content-container .menu-login-content 
   align-items: center;
   padding-top: 15px;
 }
+@media screen and (min-width: 1100px) {
+  header .header-nav .nav-container-02 .nav-content-container .menu-login-content {
+    display: none;
+  }
+}
 header .header-nav .nav-container-02 .nav-content-container .menu-login-content button {
   display: flex;
   justify-content: center;
@@ -220,4 +265,17 @@ header .header-nav .nav-container-02-active .menu-close-content-active {
   pointer-events: initial;
   opacity: 0.3;
   transition: 0.4s;
+}
+header .header-nav .nav-container-03 {
+  display: none;
+}
+@media screen and (min-width: 1100px) {
+  header .header-nav .nav-container-03 {
+    display: block;
+  }
+}
+header .header-nav .nav-container-03 .menu-button-content button {
+  height: 30px;
+  width: 30px;
+  background-color: red;
 }/*# sourceMappingURL=style.css.map */
