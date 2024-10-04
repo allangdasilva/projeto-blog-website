@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
     font-family: "Rubik", sans-serif;
 }
 
@@ -149,6 +150,7 @@ header {
             width: 100%;
 
             pointer-events: none;
+            z-index: 999;
 
             // Desktop
             @include desktop {
@@ -357,12 +359,38 @@ header {
                     }
                 }
                 .menu-login-content {
+                    @include flex-center;
+                    position: relative;
+                    padding-top: 15px;
+        
+                    overflow: hidden;
+
                     // Desktop
                     @include desktop {
-                        display: none;
+                        display: none
+                    }
+        
+                    button {
+                        @include flex-center;
+                        gap: 5px;
+        
+                        padding: 8px 30px;
+                        border: none;
+                        border-radius: 8px;
+        
+                        cursor: pointer;
+        
+                        color: $white;
+                        background-image: linear-gradient(90deg, $purple, $dark-purple);
+        
+                        span {
+                            font-weight: 500;
+                            svg {
+                                @include flex-center;
+                            }
+                        }
                     }
                 }
-                
             }
             .menu-close-content {
                 position: absolute;
@@ -402,79 +430,180 @@ header {
 
             // Desktop
             @include desktop {
-                display: initial;
+                @include flex-center;
                 padding-inline: 15px;
             }
-            .menu-login-content {
+            .button-login-content {
                 // Desktop
                 @include desktop {
                     padding-top: 0;
 
                     button {
-                        &:hover {
-                            &::after {
-                                top: 60%;
-                                -webkit-animation-play-state: running;
-                                animation-play-state: running;
+                        @include button-style;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    .main-container-01 {
+        
+    }
+
+    // Container 02
+    .main-container-02 {
+        max-width: $max-width;
+        margin-inline: auto;
+        
+        .second-container-content {
+            display: grid;
+            grid-template-columns: .7fr .3fr;
+            grid-template-areas: 
+            'title-area title-area'
+            'article-area article-area'
+            ;
+
+            .second-container-title {
+                grid-area: title-area;
+                @include flex-center;
+                justify-content: flex-start;
+                gap: 10px;
+
+                padding: 10px 20px;
+
+                img {
+                    width: 40px;
+                }
+                h2 {
+                    color: $dark-purple;
+                }
+            }
+            .second-container-article {
+                grid-area: article-area;
+
+                .article-container {
+                    padding: 10px 20px;
+
+                    .article-image {
+                        height: 225px;
+                        width: 100%;
+
+                        margin-bottom: 10px;
+
+                        border-radius: 10px;
+                        box-shadow: 0px 5px 25px #00000030;
+
+                        overflow: hidden;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+
+                            object-fit: cover;
+                        }
+                    }
+                    .article-info {
+                        @include flex-center-column;
+                        padding-top: 10px;
+                        text-align: center;
+
+                        a {
+                            @include flex-center;
+
+                            h3 {
+                                max-width: 80%;
+                                padding-block: 10px;
+    
+                                font-weight: 560;
+                                color: $dark-purple;
                             }
                         }
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            transform: translateX(-352px);
-                            top: 100%;
+                
+                        .article-person-info {
+                            @include flex-center;
+                            gap: 10px;
 
-                            height: 50%;
-                            width: 754px;
+                            padding-bottom: 10px;
 
-                            opacity: 0.4;
+                            a {
+                                @include flex-center;
+                                gap: 10px;
 
-                            -webkit-animation: wave-button 7s linear infinite;
-                            animation: wave-button 7s linear infinite;
+                                img {
+                                    height: 25px;
+                                    width: 25px;
 
-                            -webkit-animation-play-state: paused;
-                            animation-play-state: paused;
+                                    border-radius: 50%;
 
-                            background-image: url(../images/wave-button.svg);
-                            background-repeat: no-repeat;
+                                    background-color: red;
+                                }
+                                span {
+                                    font-size: $small-font-size;
+                                    color: $dark-purple;
 
-                            -webkit-transition: top .3s;
-                            transition: top .3s;
+                                    span {
+                                        color: $purple;
+                                        font-weight: 480;
+                                        transition: color .2s;
+
+                                        &:hover {
+                                            color: $dark-purple;
+                                        }
+                                    }
+                                }
+                            }
+                            .mini-wave-svg {
+                                width: 15px;
+                                filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
+                            }
+                            time {
+                                font-size: $small-font-size;
+                                font-weight: 350;
+                                color: $dark-purple;
+                            }
+                        }
+                        .article-p {
+                            padding-block: 10px;
+                            p {
+                                line-height: 25px;
+                                font-size: $small-font-size;
+                                color: $dark-purple;
+                            }
+                        }
+                        .article-btn {
+                            @include flex-center;
+                            justify-content: space-between;
+
+                            width: 100%;
+                            padding-block: 10px;
+
+                            button {
+                                @include button-style;
+                                padding: 10px 20px;
+
+                                span {
+                                    font-size: $small-font-size;
+                                    font-weight: 460;
+                                }
+                            }
+                            span {
+                                @include flex-center;
+                                gap: 10px;
+
+                                font-size: $small-font-size;
+                                color: $dark-purple;
+                            }
                         }
                     }
                 }
             }
-        }
-
-        .menu-login-content {
-            @include flex-center;
-            position: relative;
-            padding-top: 15px;
-
-            overflow: hidden;
-
-            button {
-                @include flex-center;
-                gap: 5px;
-
-                padding: 8px 30px;
-                border: none;
-                border-radius: 8px;
-
-                cursor: pointer;
-
-                color: $white;
-                background-image: linear-gradient(90deg, $purple, $dark-purple);
-
-                span {
-                    font-weight: 500;
-                    svg {
-                        @include flex-center;
-                    }
-                }
+            .second-container-aside {
+                grid-area: aside-area;
+                display: none;
             }
         }
-
     }
 }
 

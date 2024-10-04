@@ -1,3 +1,54 @@
+@use 'variables' as *;
+
+@mixin button-style {
+    @include flex-center;
+    position: relative;
+    gap: 5px;
+
+    padding: 8px 30px;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    background-image: linear-gradient(90deg, $purple, $dark-purple);
+
+    &:hover {
+        &::after {
+            top: 60%;
+            -webkit-animation-play-state: running;
+            animation-play-state: running;
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        transform: translateX(-352px);
+        top: 100%;
+
+        height: 50%;
+        width: 754px;
+
+        opacity: 0.4;
+
+        -webkit-animation: wave-button 7s linear infinite;
+        animation: wave-button 7s linear infinite;
+
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+
+        background-image: url(../images/wave-button.svg);
+        background-repeat: no-repeat;
+
+        -webkit-transition: top .3s;
+        transition: top .3s;
+    }
+    span {
+        font-weight: 500;
+        color: $white;
+    }
+}
 @mixin flex-center {
     display: flex;
     justify-content: center;
