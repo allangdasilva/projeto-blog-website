@@ -411,7 +411,7 @@ header .header-nav .nav-container-03 {
     opacity: 0.4;
     animation: wave-button 7s linear infinite;
     animation-play-state: paused;
-    background-image: url(../images/wave-button.svg);
+    background-image: url(../images/icons/wave-button.svg);
     background-repeat: no-repeat;
     transition: top 0.3s;
   }
@@ -432,6 +432,7 @@ main .main-container-02 .second-container-content {
 }
 @media screen and (min-width: 1100px) {
   main .main-container-02 .second-container-content {
+    grid-template-columns: 0.69fr 0.31fr;
     grid-template-areas: "title-area title-area" "article-area aside-area";
   }
 }
@@ -485,7 +486,7 @@ main .main-container-02 .second-container-content .second-container-article .art
   width: 100%;
   margin-bottom: 10px;
   border-radius: 10px;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1882352941);
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2941176471);
   overflow: hidden;
 }
 @media screen and (min-width: 770px) {
@@ -663,7 +664,7 @@ main .main-container-02 .second-container-content .second-container-article .art
   opacity: 0.4;
   animation: wave-button 7s linear infinite;
   animation-play-state: paused;
-  background-image: url(../images/wave-button.svg);
+  background-image: url(../images/icons/wave-button.svg);
   background-repeat: no-repeat;
   transition: top 0.3s;
 }
@@ -722,7 +723,7 @@ main .main-container-02 .second-container-content .second-container-article .art
   opacity: 0.4;
   animation: wave-button 7s linear infinite;
   animation-play-state: paused;
-  background-image: url(../images/wave-button.svg);
+  background-image: url(../images/icons/wave-button.svg);
   background-repeat: no-repeat;
   transition: top 0.3s;
 }
@@ -741,11 +742,21 @@ main .main-container-02 .second-container-content .second-container-aside {
     justify-content: center;
     align-items: center;
     justify-content: initial;
+    padding: 10px 10px 10px 0;
   }
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-01 {
-  padding: 20px;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px 20px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  border: 1px solid #0597F2;
+  background-color: #e8faff;
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-01 h3 {
   font-size: 1.4rem;
@@ -758,15 +769,15 @@ main .main-container-02 .second-container-content .second-container-aside .aside
   align-items: center;
   justify-content: flex-start;
   gap: 15px;
-  padding-block: 10px;
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-person .aside-person-image {
+  height: 70px;
   width: 70px;
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-person .aside-person-image img {
   width: 100%;
   border-radius: 50%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4117647059);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2941176471);
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-person .aside-person-info a {
   width: 100%;
@@ -779,23 +790,77 @@ main .main-container-02 .second-container-content .second-container-aside .aside
   font-weight: 350;
   color: #19065E;
 }
-main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-description {
-  padding-block: 10px;
-}
 main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-description p {
   font-size: 1.1rem;
   color: #19065E;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-social {
-  padding-top: 10px;
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-social ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-social ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #19065E;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-01 .aside-social ul li a img {
+  width: 16px;
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-02 {
-  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  border: 1px solid #0597F2;
+  background-color: #e8faff;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-02 h3 {
+  font-size: 1.4rem;
+  color: #19065E;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content .aside-notice-image a {
+  display: block;
+  height: 110px;
+  width: 110px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2941176471);
+  transition: transform 0.2s;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content .aside-notice-image a:hover {
+  transform: translateY(-2px);
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content .aside-notice-image a img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content .aside-notice-info a {
+  color: #19065E;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content .aside-notice-info a h4 {
+  font-weight: 580;
+  padding-bottom: 5px;
+}
+main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content .aside-notice-info time {
+  font-size: 0.8rem;
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-03 {
   background-color: blue;
