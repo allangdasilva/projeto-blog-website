@@ -232,7 +232,7 @@ header {
     
                                 width: 100%;
     
-                                font-size: $header-font-size;
+                                font-size: 1.1rem;
                                 font-weight: 500;
     
                                 color: $dark-purple;
@@ -298,7 +298,7 @@ header {
                                 svg {
                                     // Desktop
                                     @include desktop {
-                                        width: $small-font-size;
+                                        width: 0.9rem;
                                     }
                                 }
                             }
@@ -349,7 +349,7 @@ header {
 
                                         // Desktop
                                         @include desktop {
-                                            font-size: $small-font-size;
+                                            font-size: 0.9rem;
                                             padding: 10px;
                                         }
                                     }
@@ -465,19 +465,37 @@ main {
             'article-area article-area'
             ;
 
+            // Desktop
+            @include desktop {
+                grid-template-areas: 
+                'title-area title-area'
+                'article-area aside-area'
+                ;
+            }
+
             .second-container-title {
                 grid-area: title-area;
                 @include flex-center;
                 justify-content: flex-start;
                 gap: 10px;
 
-                padding: 10px 20px;
+                padding: 10px 20px 20px;
+
+                // Desktop
+                @include desktop {
+                    padding: 10px 10px 30px;
+                }
 
                 img {
                     width: 40px;
                 }
                 h2 {
                     color: $dark-purple;
+
+                    // Desktop
+                    @include desktop {
+                        font-size: 2rem;
+                    }
                 }
             }
             .second-container-article {
@@ -489,9 +507,15 @@ main {
                     // Tablet
                     @include tablet {
                         display: grid;
-                        grid-template-columns: 0.4fr 0.7fr;
+                        grid-template-columns: 250px 1fr;
                         justify-items: center;
                         align-items: center;
+                    }
+
+                    // Desktop
+                    @include desktop {
+                        padding: 10px 10px 40px;
+                        grid-template-columns: 310px 1fr;
                     }
 
                     .article-image {
@@ -508,7 +532,10 @@ main {
                         // Tablet
                         @include tablet {
                             margin-bottom: 0;
-                            width: 250px;
+                        }
+                        // Desktop
+                        @include desktop {
+                            height: 310px;
                         }
 
                         img {
@@ -528,13 +555,19 @@ main {
                             padding: 20px
                         }
 
-                        a {
+                        // Desktop
+                        @include desktop {
+                            padding: 0 25px;
+                        }
+
+                        .article-title {
                             @include flex-center;
 
                             // Tablet
                             @include tablet {
                                 justify-content: flex-start;
                                 text-align: initial;
+                                width: 100%;
                             }
 
                             h3 {
@@ -547,6 +580,12 @@ main {
                                 // Tablet
                                 @include tablet {
                                     max-width: initial;
+                                }
+
+                                // Desktop
+                                @include desktop {
+                                    padding-top: 0;
+                                    font-size: 1.8rem;
                                 }
                             }
                         }
@@ -575,9 +614,15 @@ main {
                                     border-radius: 50%;
 
                                     background-color: red;
+
+                                    // Desktop
+                                    @include desktop {
+                                        height: 30px;
+                                        width: 30px;
+                                    }
                                 }
                                 span {
-                                    font-size: $small-font-size;
+                                    font-size: 0.9rem;
                                     color: $dark-purple;
 
                                     span {
@@ -596,7 +641,7 @@ main {
                                 filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
                             }
                             time {
-                                font-size: $small-font-size;
+                                font-size: 0.9rem;
                                 font-weight: 350;
                                 color: $dark-purple;
                             }
@@ -611,8 +656,13 @@ main {
 
                             p {
                                 line-height: 25px;
-                                font-size: $small-font-size;
+                                font-size: 0.9rem;
                                 color: $dark-purple;
+
+                                // Desktop
+                                @include desktop {
+                                    font-size: 1rem;
+                                }
                             }
                         }
                         .article-btn {
@@ -622,12 +672,17 @@ main {
                             width: 100%;
                             padding-block: 10px;
 
+                            // Desktop
+                            @include desktop {
+                                padding-block: 20px 5px;
+                            }
+
                             button {
                                 @include button-style;
                                 padding: 10px 20px;
 
                                 span {
-                                    font-size: $small-font-size;
+                                    font-size: 0.9rem;
                                     font-weight: 460;
                                 }
                             }
@@ -635,7 +690,7 @@ main {
                                 @include flex-center;
                                 gap: 10px;
 
-                                font-size: $small-font-size;
+                                font-size: 0.9rem;
                                 color: $dark-purple;
                             }
                         }
@@ -647,7 +702,7 @@ main {
                     padding: 40px 20px 60px 20px;
 
                     span {
-                        font-size: $small-font-size;
+                        font-size: 0.9rem;
                         color: $dark-purple;
                     }
                     button {
@@ -659,6 +714,76 @@ main {
             .second-container-aside {
                 grid-area: aside-area;
                 display: none;
+
+                // Desktop
+                @include desktop {
+                    @include flex-center-column;
+                    justify-content: initial;
+                }
+
+                .aside-section-01 {
+                    padding: 20px;
+                    background-color: red;
+
+                    h3 {
+                        font-size: 1.4rem;
+                        padding-bottom: 10px;
+                        color: $dark-purple;
+                    }
+                    .aside-person {
+                        @include flex-center;
+                        justify-content: flex-start;
+                        gap: 15px;
+                        padding-block: 10px;
+
+                        .aside-person-image {
+                            width: 70px;
+
+                            img {
+                                width: 100%;
+                                border-radius: 50%;
+
+                                box-shadow: 0 10px 20px #00000069;
+                            }
+                        }
+                        .aside-person-info {
+                            a {
+                                width: 100%;
+                                font-weight: 500;
+                                color: $dark-purple;
+                            }
+                            p {
+                                padding-top: 5px;
+
+                                font-size: 0.9rem;
+                                font-weight: 350;
+
+                                color: $dark-purple;
+                            }
+                        }
+                    }
+                    .aside-description {
+                        padding-block: 10px;
+
+                        p {
+                            font-size: 1.1rem;
+                            color: $dark-purple;
+                        }
+                    }
+                    .aside-social {
+                        padding-top: 10px;
+
+                        ul {
+                            @include flex-center;
+                        }
+                    }
+                }
+                .aside-section-02 {
+                    background-color: purple;
+                }
+                .aside-section-03 {
+                    background-color: blue;
+                }
             }
         }
     }
