@@ -1,5 +1,60 @@
 @use 'variables' as *;
 
+@mixin aside-style {
+    @include flex-center;
+    gap: 10px;
+
+    .aside-notice-image, .footer-notice-image {
+
+        a {
+            display: block;
+
+            height: 110px;
+            width: 110px;
+
+            border-radius: 8px;
+            overflow: hidden;
+
+            box-shadow: 0px 8px 20px #0000003f;
+
+            transition: transform .2s;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .aside-notice-info, .footer-notice-info {
+
+        a {
+            color: $dark-purple;
+            
+            h4 {
+                font-weight: 580;
+                padding-bottom: 5px;
+            }
+        }
+        time {
+            @include flex-center;
+            justify-content: flex-start;
+            gap: 5px;
+
+            font-size: 0.8rem;
+
+            img {
+                width: 10px;
+
+                filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
+            }
+        }
+    }
+}
 @mixin aside-wave-effect {
     content: '';
     position: absolute;

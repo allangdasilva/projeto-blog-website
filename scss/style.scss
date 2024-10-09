@@ -892,59 +892,7 @@ main {
                         }
                     }
                     .aside-content {
-                        @include flex-center;
-                        gap: 10px;
-
-                        .aside-notice-image {
-
-                            a {
-                                display: block;
-
-                                height: 110px;
-                                width: 110px;
-
-                                border-radius: 8px;
-                                overflow: hidden;
-
-                                box-shadow: 0px 8px 20px #0000003f;
-
-                                transition: transform .2s;
-
-                                &:hover {
-                                    transform: translateY(-2px);
-                                }
-
-                                img {
-                                    height: 100%;
-                                    width: 100%;
-                                    object-fit: cover;
-                                }
-                            }
-                        }
-                        .aside-notice-info {
-
-                            a {
-                                
-                                color: $dark-purple;
-                                h4 {
-                                    font-weight: 580;
-                                    padding-bottom: 5px;
-                                }
-                            }
-                            time {
-                                @include flex-center;
-                                justify-content: flex-start;
-                                gap: 5px;
-
-                                font-size: 0.8rem;
-
-                                img {
-                                    width: 10px;
-
-                                    filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
-                                }
-                            }
-                        }
+                        @include aside-style;
                     }
                 }
                 .aside-section-03 {
@@ -952,6 +900,270 @@ main {
                 }
             }
         }
+    }
+}
+
+footer {
+    border-top: 1px solid $light-gray;
+    background-color: $light-blue;
+
+    // Container 01
+    .footer-container-01 {
+        // Tablet
+        @include tablet {
+            @include flex-center;
+            align-items: flex-start;
+
+            max-width: $max-width;
+            margin-inline: auto;
+
+            padding-block: 50px;
+        }
+
+        .footer-section-01 {
+            // Tablet
+            @include tablet {
+                width: 60%;
+
+                padding-inline: 50px;
+                border-right: 1px solid $light-gray
+            }
+
+            // Desktop
+            @include desktop {
+                width: 100%;
+                max-width: 420px;
+                padding-left: 20px;
+            }
+
+            .footer-image-content {
+                @include flex-center;
+                padding-block: 30px;
+
+                // Tablet
+                @include tablet {
+                    justify-content: flex-start;
+                }
+
+                a {
+                    height: 70px;
+                    width: 70px;
+
+                    transition: transform .3s;
+
+                    &:hover {
+                        transform: translateY(-3px);
+                    }
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+            .footer-text-content {
+                text-align: center;
+                padding-bottom: 30px;
+
+                // Tablet
+                @include tablet {
+                    text-align: initial;
+                }
+
+                p {
+                    padding-inline: 10px;
+                    font-size: 0.9rem;
+                    color: $dark-purple;
+
+                    // Tablet
+                    @include tablet {
+                        padding-inline: 0;
+                    }
+
+                    &:first-child {
+                        padding-bottom: 20px;
+                    }
+
+                    a {
+                        color: $dark-purple;
+                        font-weight: 580;
+
+                        transition: color .3s;
+
+                        &:hover {
+                            color: $purple;
+                        }
+                    }
+                }
+            }
+            .footer-form-content {
+                width: 100%;
+                padding-bottom: 30px;
+
+                form {
+                    @include flex-center;
+                    position: relative;
+                    
+                    width: 100%;
+                    max-width: 360px;
+
+                    margin-inline: auto;
+
+                    input[type = email] {
+                        width: 100%;
+
+                        padding: 15px;
+                        outline: 0;
+
+                        border-radius: 5px;
+                        border: 1px solid $light-gray;
+
+                        color: $dark-purple;
+                    }
+                    input[type = submit] {
+                        position: absolute;
+                        right: 0;
+
+                        height: 100%;
+                        padding-inline: 20px;
+
+                        border-radius: 0 5px 5px 0;
+                        border: none;
+
+                        cursor: pointer;
+
+                        font-weight: 580;
+                        color: $white;
+                        background-image: linear-gradient(90deg, $purple, $dark-purple);
+                    }
+                }
+            }
+        }
+        .footer-section-02 {
+            display: none;
+
+            // Tablet
+            @include tablet {
+                display: initial;
+
+                width: 40%;
+
+                padding-inline: 50px;
+            }
+
+            // Desktop
+            @include desktop {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            h3 {
+                position: relative;
+
+                padding-block: 30px;
+
+                font-size: 1.4rem;
+                color: $dark-purple;
+
+                &::after {
+                    @include aside-wave-effect;
+                    top: 45%
+                }
+            }
+            ul {
+                @include flex-center-column;
+                align-items: flex-start;
+
+                li {
+                    width: 100%;
+                    max-width: 240px;
+                    padding-block: 15px;
+
+                    border-bottom: 1px solid $light-gray;
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                    &:last-child {
+                        padding-bottom: 0;
+                        border: none;
+                    }
+
+                    a {
+                        font-size: 0.9rem;
+                        color: $dark-purple;
+
+                        transition: color .3s;
+
+                        &:hover {
+                            color: $purple;
+                        }
+                    }
+                }
+            }
+        }
+        .footer-section-03 {
+            display: none;
+
+            // Desktop
+            @include desktop {
+                display: initial;
+                padding-inline: 50px 20px;
+
+                border-left: 1px solid $light-gray;
+            }
+
+            h3 {
+                position: relative;
+
+                padding-block: 30px;
+
+                font-size: 1.4rem;
+                color: $dark-purple;
+
+                &::after {
+                    @include aside-wave-effect;
+                    top: 45%
+                }
+            }
+            .footer-content {
+                @include aside-style;
+
+                margin-bottom: 20px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    // Container 02
+    .footer-container-02 {
+        padding-bottom: 50px;
+        text-align: center;
+
+        p {
+            @include flex-center;
+            gap: 5px;
+            color: $dark-purple;
+
+            a {
+                color: $dark-purple;
+                font-weight: 580;
+            }
+            span {
+                @include flex-center;
+                
+                img {
+                    width: 15px;
+
+                    filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
+                }
+            }
+        }
+        
     }
 }
 
