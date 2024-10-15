@@ -450,10 +450,18 @@ header {
 main {
     // Container 01
     .main-container-01 {
+        max-width: $max-width;
+        margin-inline: auto;
 
         .first-container-content {
             @include flex-center-column;
             padding: 20px 20px 40px 20px;
+
+            // Desktop
+            @include desktop {
+                flex-direction: row;
+                padding: 20px 10px 80px 10px;
+            }
 
             .first-container-slider {
                 position: relative;
@@ -467,11 +475,23 @@ main {
                     height: 225px;
                     width: 100%;
 
+                    // Tablet
+                    @include tablet {
+                        height: 400px;
+                    }
+
+                    // Desktop
+                    @include desktop {
+                        height: 520px;
+                    }
+
                     .slider-images-content {
                         position: absolute;
 
                         height: 100%;
                         width: 100%;
+                        
+                        animation: fade-slide 1s;
 
                         img {
                             height: 100%;
@@ -479,6 +499,11 @@ main {
                             
                             border-radius: 15px 15px 0 0;
                             object-fit: cover;
+
+                            // Desktop
+                            @include desktop {
+                                border-radius: 15px;
+                            }
                         }
                     }
                 }
@@ -501,12 +526,52 @@ main {
                 }
                 .slider-arrow-left {
                     left: 10px;
+
+                    // Desktop
+                    @include desktop {
+                        left: 15px;
+                    }
                 }
                 .slider-arrow-right {
                     right: 10px;
+
+                    // Desktop
+                    @include desktop {
+                        right: 15px;
+                    }
                 }
                 .slider-circles {
                     display: none;
+
+                    // Desktop
+                    @include desktop {
+                        @include flex-center;
+                        gap: 15px;
+
+                        position: absolute;
+                        bottom: -40px;
+                    }
+
+                    .circle {
+                        // Desktop
+                        @include desktop {
+                            display: block;
+
+                            height: 12px;
+                            width: 12px;
+
+                            cursor: pointer;
+                            border-radius: 12px;
+
+                            background-color: $light-gray;
+
+                            transition: width .4s;
+                        }
+                    }
+                    .circle-active {
+                        width: 26px;
+                        background-color: $purple;
+                    }
                 }
             }
             .first-container-titles {
@@ -515,16 +580,84 @@ main {
                 width: 100%;
                 text-align: center;
 
-                .titles-container {
-                    width: 100%;
+                border-radius: 0 0 15px 15px;
 
-                    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.060);
-                    background-color: $white;
+                box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.080);
+                background-color: $white;
+
+                // Tablet
+                @include tablet {
+                    text-align: initial;
+                }
+
+                // Desktop
+                @include desktop {
+                    max-width: 420px;
+                    border-radius: 0 15px 15px 0;
+                }
+
+                .titles-container {
+                    @include flex-center;
+                    width: 100%;
+    
+                    // Tablet
+                    @include tablet {
+                        align-items: flex-start;
+                    }
+
+                    // Desktop
+                    @include desktop {
+                        display: flex !important;
+                        padding-right: 15px;
+                    }
 
                     .titles-position {
                         display: none;
+
+                        // Tablet
+                        @include tablet {
+                            @include flex-center;
+                            width: 100px;
+                            padding-top: 20px;
+                        }
+
+                        .position {
+                            // Tablet
+                            @include tablet {
+                                @include flex-center;
+
+                                height: 30px;
+                                width: 30px;
+
+                                border-radius: 50%;
+
+                                font-size: 0.8rem;
+                                color: $white;
+
+                                background-image: linear-gradient(90deg, $purple, $dark-purple);
+                            }
+
+                            // Desktop
+                            @include desktop {
+                                background-image: initial;
+                                background-color: $dark-purple;
+                            }
+                        }
+                        .position-active {
+                            background-image: linear-gradient(90deg, $purple, $dark-purple);
+                        }
                     }
                     .titles-container-content {
+
+                        // Tablet
+                        @include tablet {
+                            width: 100%;
+                        }
+
+                        // Desktop
+                        @include desktop {
+                            border-bottom: 2px solid $light-gray;
+                        }
 
                         a {
                             color: $dark-purple;
@@ -534,48 +667,101 @@ main {
                                 font-weight: 600;
 
                                 padding-block: 20px 15px;
+
+                                // Desktop
+                                @include desktop {
+                                    font-size: 1.6rem;
+                                    font-weight: 560;
+                                }
                             }
                         }
-                        p {
-                            display: none;
-                        }
-                        .titles-person-info {
-                            @include flex-center;
-                            gap: 10px;
-                            padding-bottom: 20px;
+                        .titles-text-person-container {
+                            // Desktop
+                            @include desktop {
+                                max-height: 0;
+                                opacity: 0;
+                                pointer-events: none;
 
-                            a {
+                                overflow: hidden;
+
+                                transition: max-height .8s, opacity .4s;
+                            }
+
+                            p {
+                                display: none;
+    
+                                // Tablet
+                                @include tablet {
+                                    display: block;
+    
+                                    padding-bottom: 15px;
+    
+                                    font-size: 0.9rem;
+                                    color: $dark-purple;
+                                }
+
+                                // Desktop
+                                @include desktop {
+                                    font-size: 1rem
+                                }
+                            }
+                            .titles-person-info {
                                 @include flex-center;
                                 gap: 10px;
-
-                                font-size: 0.9rem;
-                                color: $dark-purple;
-
-                                img {
-                                    height: 30px;
-                                    width: 30px;
-
-                                    border-radius: 50%;
+                                padding-bottom: 20px;
+    
+                                // Tablet
+                                @include tablet {
+                                    justify-content: flex-start
                                 }
-                                span {
+    
+                                a {
+                                    @include flex-center;
+                                    gap: 10px;
+    
+                                    font-size: 0.9rem;
+                                    color: $dark-purple;
+
+                                    // Desktop
+                                    @include desktop {
+                                        font-size: 1rem
+                                    }
+    
+                                    img {
+                                        height: 30px;
+                                        width: 30px;
+    
+                                        border-radius: 50%;
+                                    }
                                     span {
-                                        font-weight: 480;
-                                        color: $purple;
+                                        span {
+                                            font-weight: 480;
+                                            color: $purple;
+                                        }
                                     }
                                 }
-                            }
-                            .mini-wave-svg {
-                                width: 15px;
-                                
-                                filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
-                            }
-                            time {
-                                font-size: 0.9rem;
-                                font-weight: 350;
-
-                                color: $dark-purple;
+                                .mini-wave-svg {
+                                    width: 15px;
+                                    
+                                    filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
+                                }
+                                time {
+                                    font-size: 0.9rem;
+                                    font-weight: 350;
+    
+                                    color: $dark-purple;
+                                }
                             }
                         }
+                        .titles-text-person-container-active {
+                            max-height: 99px;
+                            opacity: 1;
+                            pointer-events: initial;
+                        }
+                        
+                    }
+                    .titles-container-content-03 {
+                        border-bottom: none;
                     }
                 }
             }
@@ -1305,5 +1491,15 @@ footer {
     100% {
         -webkit-transform: translate(420px);
         transform: translateX(420px);
+    }
+}
+
+// Fade Slide
+@keyframes fade-slide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

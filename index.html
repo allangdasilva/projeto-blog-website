@@ -162,19 +162,19 @@
                     </div>
 
                     <!-- Arrow Left -->
-                    <div class="slider-arrow-left">
+                    <div class="slider-arrow-left" onclick="nextPrev(-1)">
                         <img src="images/icons/arrow-left.svg" alt="Arrow left icon">
                     </div>
                     <!-- Arrow Right -->
-                    <div class="slider-arrow-right">
+                    <div class="slider-arrow-right" onclick="nextPrev(1)">
                         <img src="images/icons/arrow-right.svg" alt="Arrow left icon">
                     </div>
 
                     <!-- Circles -->
                     <div class="slider-circles">
-                        <span class="circle"></span>
-                        <span class="circle"></span>
-                        <span class="circle"></span>
+                        <span class="circle" onclick="currentSlider(1)"></span>
+                        <span class="circle" onclick="currentSlider(2)"></span>
+                        <span class="circle" onclick="currentSlider(3)"></span>
                     </div>
                 </section>
 
@@ -182,7 +182,7 @@
                 <section class="first-container-titles">
 
                     <!-- Article 01 -->
-                    <article class="titles-container" >
+                    <article class="titles-container" onmouseenter="sliderMouseEnter(1)">
 
                         <!-- Position -->
                         <div class="titles-position">
@@ -194,22 +194,24 @@
                             <a href="#">
                                 <h2>Alguns esporte que serão afetados pelos avanços tecnológicos</h2>
                             </a>
-                            <p>O mundo dos esportes não está imune aos rápidos avanços...</p>
-                            <div class="titles-person-info">
-                                <a href="#">
-                                    <img src="images/profile.jpg" alt="Profile photo">
-                                    <span>
-                                        Por <span>Allan Silva</span>
-                                    </span>
-                                </a>
-                                <img src="images/icons/mini-wave.svg" alt="Mini wave" class="mini-wave-svg">
-                                <time datetime="2024-10-03">Outubro 03, 2024</time>
+                            <div class="titles-text-person-container">
+                                <p>O mundo dos esportes não está imune aos rápidos avanços...</p>
+                                <div class="titles-person-info">
+                                    <a href="#">
+                                        <img src="images/profile.jpg" alt="Profile photo">
+                                        <span>
+                                            Por <span>Allan Silva</span>
+                                        </span>
+                                    </a>
+                                    <img src="images/icons/mini-wave.svg" alt="Mini wave" class="mini-wave-svg">
+                                    <time datetime="2024-10-03">Outubro 03, 2024</time>
+                                </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- Article 02 -->
-                    <article class="titles-container" style="display: none;">
+                    <article class="titles-container" onmouseenter="sliderMouseEnter(2)">
 
                         <!-- Position -->
                         <div class="titles-position">
@@ -221,22 +223,25 @@
                             <a href="#">
                                 <h2>Animais que cativam as pessoas com sua inteligência</h2>
                             </a>
-                            <p>Os animais nunca param de nos surpreender com sua inteligência e...</p>
-                            <div class="titles-person-info">
-                                <a href="#">
-                                    <img src="images/profile.jpg" alt="Profile photo">
-                                    <span>
-                                        Por <span>Allan Silva</span>
-                                    </span>
-                                </a>
-                                <img src="images/icons/mini-wave.svg" alt="Mini wave">
-                                <time datetime="2024-10-03">Outubro 03, 2024</time>
+
+                            <div class="titles-text-person-container">
+                                <p>Os animais nunca param de nos surpreender com sua inteligência e...</p>
+                                <div class="titles-person-info">
+                                    <a href="#">
+                                        <img src="images/profile.jpg" alt="Profile photo">
+                                        <span>
+                                            Por <span>Allan Silva</span>
+                                        </span>
+                                    </a>
+                                    <img src="images/icons/mini-wave.svg" alt="Mini wave" class="mini-wave-svg">
+                                    <time datetime="2024-10-03">Outubro 03, 2024</time>
+                                </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- Article 03 -->
-                    <article class="titles-container" style="display: none;">
+                    <article class="titles-container" onmouseenter="sliderMouseEnter(3)">
 
                         <!-- Position -->
                         <div class="titles-position">
@@ -244,20 +249,22 @@
                         </div>
 
                         <!-- Content -->
-                        <div class="titles-container-content">
+                        <div class="titles-container-content titles-container-content-03">
                             <a href="">
                                 <h2>Planeje rapidamente o design de interiores com a ajuda de renderizações</h2>
                             </a>
-                            <p>Quando se trata de design de interiores, visualizar o resultado final é...</p>
-                            <div class="titles-person-info">
-                                <a href="#">
-                                    <img src="images/profile.jpg" alt="Profile photo">
-                                    <span>
-                                        Por <span>Allan Silva</span>
-                                    </span>
-                                </a>
-                                <img src="images/icons/mini-wave.svg" alt="Mini wave">
-                                <time datetime="2024-10-03">Outubro 03, 2024</time>
+                            <div class="titles-text-person-container">
+                                <p>Quando se trata de design de interiores, visualizar o resultado final é...</p>
+                                <div class="titles-person-info">
+                                    <a href="#">
+                                        <img src="images/profile.jpg" alt="Profile photo">
+                                        <span>
+                                            Por <span>Allan Silva</span>
+                                        </span>
+                                    </a>
+                                    <img src="images/icons/mini-wave.svg" alt="Mini wave" class="mini-wave-svg">
+                                    <time datetime="2024-10-03">Outubro 03, 2024</time>
+                                </div>
                             </div>
                         </div>
                     </article>
