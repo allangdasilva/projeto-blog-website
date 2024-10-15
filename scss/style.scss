@@ -450,7 +450,136 @@ header {
 main {
     // Container 01
     .main-container-01 {
-        
+
+        .first-container-content {
+            @include flex-center-column;
+            padding: 20px 20px 40px 20px;
+
+            .first-container-slider {
+                position: relative;
+                @include flex-center;
+
+                width: 100%;
+
+                .slider-container-images {
+                    position: relative;
+
+                    height: 225px;
+                    width: 100%;
+
+                    .slider-images-content {
+                        position: absolute;
+
+                        height: 100%;
+                        width: 100%;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            
+                            border-radius: 15px 15px 0 0;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .slider-arrow-left, .slider-arrow-right {
+                    position: absolute;
+                    @include flex-center;
+
+                    padding: 10px;
+
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    background-image: linear-gradient(90deg, $purple, $dark-purple);
+
+                    img {
+                        width: 16px;
+
+                        filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(170deg) brightness(104%) contrast(107%);
+                    }
+                }
+                .slider-arrow-left {
+                    left: 10px;
+                }
+                .slider-arrow-right {
+                    right: 10px;
+                }
+                .slider-circles {
+                    display: none;
+                }
+            }
+            .first-container-titles {
+                @include flex-center-column;
+
+                width: 100%;
+                text-align: center;
+
+                .titles-container {
+                    width: 100%;
+
+                    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.060);
+                    background-color: $white;
+
+                    .titles-position {
+                        display: none;
+                    }
+                    .titles-container-content {
+
+                        a {
+                            color: $dark-purple;
+
+                            h2 {
+                                font-size: 1.3rem;
+                                font-weight: 600;
+
+                                padding-block: 20px 15px;
+                            }
+                        }
+                        p {
+                            display: none;
+                        }
+                        .titles-person-info {
+                            @include flex-center;
+                            gap: 10px;
+                            padding-bottom: 20px;
+
+                            a {
+                                @include flex-center;
+                                gap: 10px;
+
+                                font-size: 0.9rem;
+                                color: $dark-purple;
+
+                                img {
+                                    height: 30px;
+                                    width: 30px;
+
+                                    border-radius: 50%;
+                                }
+                                span {
+                                    span {
+                                        font-weight: 480;
+                                        color: $purple;
+                                    }
+                                }
+                            }
+                            .mini-wave-svg {
+                                width: 15px;
+                                
+                                filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
+                            }
+                            time {
+                                font-size: 0.9rem;
+                                font-weight: 350;
+
+                                color: $dark-purple;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // Container 02
