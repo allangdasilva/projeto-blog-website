@@ -9,9 +9,6 @@
     text-decoration: none;
     font-family: "Rubik", sans-serif;
 }
-body {
-    background-color: red;
-}
 
 header {
     background-color: $white;
@@ -501,7 +498,7 @@ main {
                         height: 100%;
                         width: 100%;
                         
-                        animation: fade-slide 1s;
+                        animation: fade-slider 1s;
 
                         img {
                             height: 100%;
@@ -521,7 +518,8 @@ main {
                     position: absolute;
                     @include flex-center;
 
-                    padding: 10px;
+                    height: 35px;
+                    width: 35px;
 
                     border-radius: 50%;
                     cursor: pointer;
@@ -1051,7 +1049,7 @@ main {
                     @include flex-center-column;
                     justify-content: initial;
 
-                    padding: 10px 10px 10px 0;
+                    padding: 10px 10px 80px 0;
                 }
 
                 .aside-section-01 {
@@ -1209,6 +1207,7 @@ main {
                     gap: 20px;
 
                     padding: 30px 20px;
+                    margin-bottom: 40px;
 
                     border-radius: 10px;
                     border: 1px solid $blue;
@@ -1229,7 +1228,91 @@ main {
                     }
                 }
                 .aside-section-03 {
-                    background-color: blue;
+                    @include flex-center;
+
+                    width: 100%;
+                    padding: 30px 20px 30px 20px;
+
+                    border-radius: 10px;
+                    border: 1px solid $blue;
+
+                    background-color: $light-blue;
+
+                    .aside-mini-slider {
+                        @include flex-center-column;
+                        align-items: flex-end;
+
+                        .aside-mini-slider-image-container {
+                            position: relative;
+
+                            height: 200px;
+                            width: 270px;
+
+                            .mini-slider-images-content {
+                                position: absolute;
+
+                                height: 100%;
+                                width: 100%;
+
+                                animation: fade-slider 1s;
+
+                                a {
+                                    
+                                   img {
+                                        height: 100%;
+                                        width: 100%;
+
+                                        object-fit: cover;
+                                        border-radius: 10px;
+                                        
+                                        box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.11);
+                                    }    
+                                }
+                                
+                                span {
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: -34.5px;
+
+                                    a {
+                                        font-size: 1.1rem;
+                                        font-weight: 500;
+                                        color: $dark-purple;
+
+                                        transition: .3s;
+
+                                        &:hover {
+                                            color: $purple;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .aside-mini-slider-control {
+                            @include flex-center;
+                            gap: 10px;
+                            padding-top: 10px;
+
+                            .mini-slider-arrow-left, .mini-slider-arrow-right {
+                                @include flex-center;
+
+                                height: 35px;
+                                width: 35px;
+                                
+                                border-radius: 50%;
+
+                                cursor: pointer;
+
+                                background-image: linear-gradient(90deg, $purple, $dark-purple);
+
+                                img {
+                                    width: 16px;
+
+                                    filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(170deg) brightness(104%) contrast(107%);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1513,7 +1596,7 @@ footer {
 }
 
 // Fade Slide
-@keyframes fade-slide {
+@keyframes fade-slider {
     0% {
         opacity: 0;
     }

@@ -71,3 +71,27 @@ function showSlider(n){
     textPerson[sliderIndex - 1].classList.add('titles-text-person-container-active')
     position[sliderIndex - 1].classList.add('position-active')
 }
+
+// Mini Slider
+showMiniSlider(sliderIndex)
+
+function nextPrevMiniSlider(n){
+    showMiniSlider(sliderIndex += n)
+}
+
+function showMiniSlider(n){
+    let miniSliderImages = [...document.querySelectorAll('.mini-slider-images-content')]
+
+    if(n > miniSliderImages.length){
+        sliderIndex = 1
+    }
+    if(n < 1){
+        sliderIndex = miniSliderImages.length
+    }
+
+    miniSliderImages.map((ele)=>{
+        ele.style.display = 'none'
+    })
+
+    miniSliderImages[sliderIndex - 1].style.display = 'block'
+}
