@@ -10,13 +10,10 @@
     font-family: "Rubik", sans-serif;
 }
 
-header {
-    //position: fixed;
-    
+header {  
     width: 100%;
 
     z-index: 999;
-    
     background-color: $white;
 
     .header-nav {
@@ -97,12 +94,7 @@ header {
                 a {
                     @include flex-center;
                     height: 60px;
-                    width: 125px;
-
-                    // Desktop
-                    @include desktop {
-                        width: 60px;
-                    }
+                    width: 60px;
 
                     img {
                         height: 100%;
@@ -223,8 +215,6 @@ header {
                         
                         li {
                             @include flex-center;
-                            justify-content: space-between;
-    
                             padding: 15px 0 15px 15px;
 
                             // Desktop
@@ -233,7 +223,6 @@ header {
                             }
     
                             span {
-                                display: flex;
                                 @include flex-center;
                                 justify-content: space-between;
     
@@ -264,6 +253,7 @@ header {
                         .search {
                             display: none;
 
+                            // Desktop
                             @include desktop {
                                 display: initial;
                             }
@@ -275,7 +265,6 @@ header {
                             &:hover {
                                 ul {
                                     max-height: 117px;
-                                    opacity: 1;
                                     pointer-events: initial;
 
                                     // Desktop
@@ -283,6 +272,7 @@ header {
                                         max-height: initial;
                                         top: 100%;
 
+                                        opacity: 1;
                                         transition: top .2s;
                                     }
                                 }
@@ -312,7 +302,7 @@ header {
     
                             ul {
                                 max-height: 0;
-                                opacity: 0;
+                                
                                 pointer-events: none;
                                 
                                 overflow: hidden;
@@ -330,6 +320,7 @@ header {
                                     left: -40%;
 
                                     max-height: initial;
+                                    opacity: 0;
                                     width: 240px;
 
                                     padding: 10px;
@@ -348,7 +339,7 @@ header {
     
                                         color: $dark-purple;
     
-                                        transition: .2s;
+                                        transition: color .2s;
     
                                         &:hover {
                                             color: $purple;
@@ -424,7 +415,7 @@ header {
                 pointer-events: initial;
                 opacity: .3;
 
-                transition: .4s;
+                transition: opacity .4s;
             }
         }
         
@@ -449,6 +440,11 @@ header {
             }
         }
     }
+}
+.header-active {
+    position: fixed;
+    animation: menu-fixed .8s;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.075);
 }
 
 main {
@@ -515,21 +511,7 @@ main {
                 }
                 .slider-arrow-left, .slider-arrow-right {
                     position: absolute;
-                    @include flex-center;
-
-                    height: 35px;
-                    width: 35px;
-
-                    border-radius: 50%;
-                    cursor: pointer;
-
-                    @include background-image;
-
-                    img {
-                        width: 16px;
-
-                        filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(170deg) brightness(104%) contrast(107%);
-                    }
+                    @include arrows-buttons;
                 }
                 .slider-arrow-left {
                     left: 10px;
@@ -749,7 +731,7 @@ main {
                                 .mini-wave-svg {
                                     width: 15px;
                                     
-                                    filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
+                                    @include filter-blue;
                                 }
                                 time {
                                     font-size: 0.9rem;
@@ -960,7 +942,7 @@ main {
                             }
                             .mini-wave-svg {
                                 width: 15px;
-                                filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
+                                @include filter-blue;
                             }
                             time {
                                 font-size: 0.9rem;
@@ -1292,22 +1274,7 @@ main {
                             padding-top: 10px;
 
                             .mini-slider-arrow-left, .mini-slider-arrow-right {
-                                @include flex-center;
-
-                                height: 35px;
-                                width: 35px;
-                                
-                                border-radius: 50%;
-
-                                cursor: pointer;
-
-                                @include background-image;
-
-                                img {
-                                    width: 16px;
-
-                                    filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(170deg) brightness(104%) contrast(107%);
-                                }
+                                @include arrows-buttons;
                             }
                         }
                     }
@@ -1315,6 +1282,9 @@ main {
             }
         }
     }
+}
+.main-active {
+    transform: translateY(100px);
 }
 
 footer {
@@ -1573,7 +1543,7 @@ footer {
                 img {
                     width: 15px;
 
-                    filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
+                    @include filter-blue;
                 }
             }
         }
@@ -1588,5 +1558,15 @@ footer {
     }
     100% {
         opacity: 1;
+    }
+}
+
+// Menu Fixed
+@keyframes menu-fixed {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
     }
 }
