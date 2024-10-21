@@ -1288,6 +1288,7 @@ main {
 }
 
 footer {
+    position: relative;
     border-top: 1px solid $light-gray;
     background-color: $light-blue;
 
@@ -1525,7 +1526,7 @@ footer {
 
     // Container 02
     .footer-container-02 {
-        padding-bottom: 50px;
+        padding-bottom: 90px;
         text-align: center;
 
         p {
@@ -1549,6 +1550,57 @@ footer {
         }
         
     }
+
+    // Container 03
+    .footer-container-03 {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+
+        overflow: hidden;
+        z-index: -1;
+
+        .footer-wave {
+            position: absolute;
+            bottom: -25px;
+
+            height: 100px;
+            width: 600%;
+
+            background-image: url(../images/wave.png);
+            background-size: 50% 100px;
+            background-repeat: repeat-x;
+
+            @include filter-blue;
+
+            // Desktop
+            @include desktop {
+                width: 400%;
+            }
+        }
+        .footer-wave-01 {
+            opacity: .3;
+            animation: wave-effect  6s linear infinite;
+            z-index: 9;
+        }
+        .footer-wave-02 {
+            opacity: .2;
+            animation: wave-effect  10s linear infinite;
+            z-index: 8;
+        }
+        .footer-wave-03 {
+            opacity: .1;
+            animation: wave-effect  14s linear infinite;
+            z-index: 7;
+        }
+        
+    }
+}
+.footer-active {
+    transform: translateY(100px);
 }
 
 // Fade Slide
@@ -1568,5 +1620,15 @@ footer {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+// Wave Effect
+@keyframes wave-effect {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }

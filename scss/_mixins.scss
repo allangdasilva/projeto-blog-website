@@ -97,6 +97,7 @@
     filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
 }
 @mixin button-style {
+    position: relative;
     @include flex-center;
     gap: 5px;
     
@@ -104,12 +105,40 @@
     border-radius: 8px;
 
     cursor: pointer;
-
+    overflow: hidden;
+    
     @include background-image;
+
+
+    &:hover {
+        &::after {
+            bottom: -60%;
+            animation-play-state: running;
+        }
+    }
 
     span {
         font-weight: 500;
         color: $white;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+
+        height: 100%;
+        width: 300%;
+
+        opacity: .4;
+
+        background-image: url(../images/wave.png);
+        background-size: 50% 50%;
+        background-repeat: repeat-x;
+
+        animation: wave-effect 5s linear infinite;
+        animation-play-state: paused;
+        transition: bottom .3s;
     }
 }
 @mixin flex-center {

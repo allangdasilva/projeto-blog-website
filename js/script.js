@@ -102,16 +102,19 @@ function showMiniSlider(n){
 window.addEventListener('scroll', ()=>{
     const HEADER = document.querySelector('header');
     const MAIN = document.querySelector('main');
+    const FOOTER = document.querySelector('footer');
     const NAV_CONTAINER_01 = document.querySelector('.nav-container-01');
     const NAV_CONTAINER_02 = document.querySelector('.nav-container-02');
 
     if(window.scrollY > 30 && NAV_CONTAINER_02.classList == 'nav-container-02') {
         HEADER.classList.add('header-active');
         MAIN.classList.add('main-active');
+        FOOTER.classList.add('footer-active');
         NAV_CONTAINER_01.style.paddingBlock = '10px';
     }else{
         HEADER.classList.remove('header-active');
         MAIN.classList.remove('main-active');
+        FOOTER.classList.remove('footer-active');
         NAV_CONTAINER_01.style.paddingBlock = '20px';
     }
 })
