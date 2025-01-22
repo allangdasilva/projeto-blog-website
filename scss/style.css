@@ -737,7 +737,8 @@ main .main-container-01 .first-container-content .first-container-titles .titles
   color: #19065E;
 }
 main .main-container-01 .first-container-content .first-container-titles .titles-container .titles-container-content .titles-text-person-container-active {
-  max-height: 99px;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
   opacity: 1;
   pointer-events: initial;
 }
@@ -1271,78 +1272,6 @@ main .main-container-02 .second-container-content .second-container-aside .aside
 main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content .aside-notice-info time img, main .main-container-02 .second-container-content .second-container-aside .aside-section-02 .aside-content .footer-notice-info time img {
   width: 10px;
   filter: invert(38%) sepia(95%) saturate(4570%) hue-rotate(221deg) brightness(100%) contrast(91%);
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 30px 20px 30px 20px;
-  border-radius: 10px;
-  border: 1px solid #0597F2;
-  background-color: #F5FDFF;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-items: flex-end;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-image-container {
-  position: relative;
-  height: 200px;
-  width: 270px;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-image-container .mini-slider-images-content {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  animation: fade-slider 1s;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-image-container .mini-slider-images-content a img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-image-container .mini-slider-images-content span {
-  position: absolute;
-  left: 0;
-  bottom: -34.5px;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-image-container .mini-slider-images-content span a {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #19065E;
-  transition: 0.3s;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-image-container .mini-slider-images-content span a:hover {
-  color: #6F04D9;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 10px;
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-control .mini-slider-arrow-left, main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-control .mini-slider-arrow-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background-image: linear-gradient(90deg, #6F04D9, #19065E);
-}
-main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-control .mini-slider-arrow-left img, main .main-container-02 .second-container-content .second-container-aside .aside-section-03 .aside-mini-slider .aside-mini-slider-control .mini-slider-arrow-right img {
-  width: 16px;
-  filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(170deg) brightness(104%) contrast(107%);
 }
 main .main-container-03 {
   position: absolute;

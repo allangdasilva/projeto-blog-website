@@ -74,30 +74,6 @@ function showSlider(n){
     POSITION[sliderIndex - 1].classList.add('position-active');
 }
 
-// Mini Slider
-showMiniSlider(sliderIndex);
-
-function nextPrevMiniSlider(n){
-    showMiniSlider(sliderIndex += n);
-}
-
-function showMiniSlider(n){
-    const MINI_SLIDER_IMAGES = [...document.querySelectorAll('.mini-slider-images-content')];
-
-    if(n > MINI_SLIDER_IMAGES.length){
-        sliderIndex = 1;
-    }
-    if(n < 1){
-        sliderIndex = MINI_SLIDER_IMAGES.length;
-    }
-
-    MINI_SLIDER_IMAGES.map((ele)=>{
-        ele.style.display = 'none';
-    })
-
-    MINI_SLIDER_IMAGES[sliderIndex - 1].style.display = 'block';
-}
-
 // Menu Fixed
 window.addEventListener('scroll', ()=>{
     const HEADER = document.querySelector('header');

@@ -747,7 +747,7 @@ main {
                             }
                         }
                         .titles-text-person-container-active {
-                            max-height: 99px;
+                            max-height: fit-content;
                             opacity: 1;
                             pointer-events: initial;
                         }
@@ -1208,78 +1208,6 @@ main {
                     }
                     .aside-content {
                         @include aside-style;
-                    }
-                }
-                .aside-section-03 {
-                    @include flex-center;
-
-                    width: 100%;
-                    padding: 30px 20px 30px 20px;
-
-                    border-radius: 10px;
-                    border: 1px solid $blue;
-
-                    background-color: $light-blue;
-
-                    .aside-mini-slider {
-                        @include flex-center-column;
-                        align-items: flex-end;
-
-                        .aside-mini-slider-image-container {
-                            position: relative;
-
-                            height: 200px;
-                            width: 270px;
-
-                            .mini-slider-images-content {
-                                position: absolute;
-
-                                height: 100%;
-                                width: 100%;
-
-                                animation: fade-slider 1s;
-
-                                a {
-                                    
-                                   img {
-                                        height: 100%;
-                                        width: 100%;
-
-                                        object-fit: cover;
-                                        border-radius: 10px;
-                                        
-                                        box-shadow: $box-shadow-secondary;
-                                    }    
-                                }
-                                
-                                span {
-                                    position: absolute;
-                                    left: 0;
-                                    bottom: -34.5px;
-
-                                    a {
-                                        font-size: 1.1rem;
-                                        font-weight: 500;
-                                        color: $dark-purple;
-
-                                        transition: .3s;
-
-                                        &:hover {
-                                            color: $purple;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .aside-mini-slider-control {
-                            @include flex-center;
-                            gap: 10px;
-                            padding-top: 10px;
-
-                            .mini-slider-arrow-left, .mini-slider-arrow-right {
-                                @include arrows-buttons;
-                            }
-                        }
                     }
                 }
             }
