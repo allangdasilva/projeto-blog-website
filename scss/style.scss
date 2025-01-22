@@ -840,11 +840,9 @@ main {
 
                         // Tablet
                         @include tablet {
+                            height: initial;
+                            aspect-ratio: 1/1;
                             margin-bottom: 0;
-                        }
-                        // Desktop
-                        @include desktop {
-                            height: 310px;
                         }
 
                         img {
@@ -856,11 +854,14 @@ main {
                     }
                     .article-info {
                         @include flex-center-column;
+                        width: 100%;
+
                         padding-top: 10px;
                         text-align: center;
 
                         // Tablet
                         @include tablet {
+                            
                             padding: 20px
                         }
 
@@ -871,31 +872,24 @@ main {
 
                         .article-title {
                             @include flex-center;
+                            padding-block: 10px;
+                            font-size: 1.4rem;
+                            width: 100%;
+
+                            font-weight: 560;
+                            color: $dark-purple;
 
                             // Tablet
                             @include tablet {
                                 justify-content: flex-start;
                                 text-align: initial;
-                                width: 100%;
+                                font-size: 1.6rem;
                             }
 
-                            h3 {
-                                max-width: 80%;
-                                padding-block: 10px;
-    
-                                font-weight: 560;
-                                color: $dark-purple;
-
-                                // Tablet
-                                @include tablet {
-                                    max-width: initial;
-                                }
-
-                                // Desktop
-                                @include desktop {
-                                    padding-top: 0;
-                                    font-size: 1.8rem;
-                                }
+                            // Desktop
+                            @include desktop {
+                                padding-top: 0;
+                                font-size: 1.8rem;
                             }
                         }
                 
@@ -955,11 +949,12 @@ main {
                                 color: $dark-purple;
                             }
                         }
-                        .article-p {
+                        .article-p-c {
                             padding-block: 10px;
 
                             // Tablet
                             @include tablet {
+                                width: 100%;
                                 text-align: initial;
                             }
 

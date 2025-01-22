@@ -813,12 +813,9 @@ main .main-container-02 .second-container-content .second-container-article .art
 }
 @media screen and (min-width: 770px) {
   main .main-container-02 .second-container-content .second-container-article .article-container .article-image {
+    height: initial;
+    aspect-ratio: 1/1;
     margin-bottom: 0;
-  }
-}
-@media screen and (min-width: 1100px) {
-  main .main-container-02 .second-container-content .second-container-article .article-container .article-image {
-    height: 310px;
   }
 }
 main .main-container-02 .second-container-content .second-container-article .article-container .article-image img {
@@ -832,6 +829,7 @@ main .main-container-02 .second-container-content .second-container-article .art
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   padding-top: 10px;
   text-align: center;
 }
@@ -849,27 +847,21 @@ main .main-container-02 .second-container-content .second-container-article .art
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-block: 10px;
+  font-size: 1.4rem;
+  width: 100%;
+  font-weight: 560;
+  color: #19065E;
 }
 @media screen and (min-width: 770px) {
   main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-title {
     justify-content: flex-start;
     text-align: initial;
-    width: 100%;
-  }
-}
-main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-title h3 {
-  max-width: 80%;
-  padding-block: 10px;
-  font-weight: 560;
-  color: #19065E;
-}
-@media screen and (min-width: 770px) {
-  main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-title h3 {
-    max-width: initial;
+    font-size: 1.6rem;
   }
 }
 @media screen and (min-width: 1100px) {
-  main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-title h3 {
+  main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-title {
     padding-top: 0;
     font-size: 1.8rem;
   }
@@ -927,21 +919,22 @@ main .main-container-02 .second-container-content .second-container-article .art
   font-weight: 350;
   color: #19065E;
 }
-main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-p {
+main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-p-c {
   padding-block: 10px;
 }
 @media screen and (min-width: 770px) {
-  main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-p {
+  main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-p-c {
+    width: 100%;
     text-align: initial;
   }
 }
-main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-p p {
+main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-p-c p {
   line-height: 25px;
   font-size: 0.9rem;
   color: #19065E;
 }
 @media screen and (min-width: 1100px) {
-  main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-p p {
+  main .main-container-02 .second-container-content .second-container-article .article-container .article-info .article-p-c p {
     font-size: 1rem;
   }
 }
