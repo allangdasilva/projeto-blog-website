@@ -10,6 +10,7 @@
     border-radius: 50%;
     cursor: pointer;
 
+    box-shadow: $box-shadow;
     @include background-image;
 
     img {
@@ -29,6 +30,7 @@
 }
 @mixin aside-style {
     @include flex-center;
+    justify-content: flex-start;
     gap: 10px;
 
     .aside-notice-image, .footer-notice-image {
@@ -42,7 +44,7 @@
             border-radius: 8px;
             overflow: hidden;
 
-            box-shadow: 0px 8px 20px #0000003f;
+            box-shadow: $box-shadow-tertiary;
 
             transition: transform .2s;
 
