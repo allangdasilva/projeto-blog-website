@@ -426,17 +426,13 @@ header {
                 padding-right: 10px;
             }
             .button-login-content {
-                // Desktop
-                @include desktop {
-                    padding-top: 0;
 
-                    a {
-                        @include button-style;
-                        padding: 8px 30px;
+                a {
+                    @include button-style;
+                    padding: 8px 30px;
 
-                        img {
-                            @include flex-center;
-                        }
+                    img {
+                        @include flex-center;
                     }
                 }
             }
