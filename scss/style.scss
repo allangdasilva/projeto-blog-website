@@ -357,7 +357,7 @@ header {
                         }
                     }
                 }
-                .menu-login-content {
+                .menu-email-content {
                     @include flex-center;
                     position: relative;
                     padding-top: 15px;
@@ -425,7 +425,7 @@ header {
                 @include flex-center;
                 padding-right: 10px;
             }
-            .button-login-content {
+            .button-email-content {
 
                 a {
                     @include button-style;
@@ -1389,9 +1389,11 @@ footer {
                     }
                     input[type = submit] {
                         position: absolute;
+                        top: 0;
                         right: 0;
 
                         height: 100%;
+                        
                         padding-inline: 20px;
 
                         border-radius: 0 5px 5px 0;
