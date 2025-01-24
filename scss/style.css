@@ -322,7 +322,7 @@ header .header-nav .nav-container-02 .nav-content-container .menu-login-content 
     display: none;
   }
 }
-header .header-nav .nav-container-02 .nav-content-container .menu-login-content button {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content a {
   position: relative;
   display: flex;
   justify-content: center;
@@ -335,15 +335,15 @@ header .header-nav .nav-container-02 .nav-content-container .menu-login-content 
   background-image: linear-gradient(90deg, #6F04D9, #19065E);
   padding: 8px 30px;
 }
-header .header-nav .nav-container-02 .nav-content-container .menu-login-content button:hover::after {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content a:hover::after {
   bottom: -60%;
   animation-play-state: running;
 }
-header .header-nav .nav-container-02 .nav-content-container .menu-login-content button span {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content a span {
   font-weight: 500;
   color: #F9F9F9;
 }
-header .header-nav .nav-container-02 .nav-content-container .menu-login-content button::after {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -358,7 +358,7 @@ header .header-nav .nav-container-02 .nav-content-container .menu-login-content 
   animation-play-state: paused;
   transition: bottom 0.3s;
 }
-header .header-nav .nav-container-02 .nav-content-container .menu-login-content button span svg {
+header .header-nav .nav-container-02 .nav-content-container .menu-login-content a img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -406,7 +406,7 @@ header .header-nav .nav-container-03 {
   header .header-nav .nav-container-03 .button-login-content {
     padding-top: 0;
   }
-  header .header-nav .nav-container-03 .button-login-content button {
+  header .header-nav .nav-container-03 .button-login-content a {
     position: relative;
     display: flex;
     justify-content: center;
@@ -419,15 +419,15 @@ header .header-nav .nav-container-03 {
     background-image: linear-gradient(90deg, #6F04D9, #19065E);
     padding: 8px 30px;
   }
-  header .header-nav .nav-container-03 .button-login-content button:hover::after {
+  header .header-nav .nav-container-03 .button-login-content a:hover::after {
     bottom: -60%;
     animation-play-state: running;
   }
-  header .header-nav .nav-container-03 .button-login-content button span {
+  header .header-nav .nav-container-03 .button-login-content a span {
     font-weight: 500;
     color: #F9F9F9;
   }
-  header .header-nav .nav-container-03 .button-login-content button::after {
+  header .header-nav .nav-container-03 .button-login-content a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -441,6 +441,11 @@ header .header-nav .nav-container-03 {
     animation: wave-effect 5s linear infinite;
     animation-play-state: paused;
     transition: bottom 0.3s;
+  }
+  header .header-nav .nav-container-03 .button-login-content a img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -753,6 +758,7 @@ main .main-container-02 .second-container-content {
   display: grid;
   grid-template-columns: 70% 30%;
   grid-template-areas: "title-area title-area" "article-area article-area";
+  gap: 10px;
 }
 @media screen and (min-width: 1100px) {
   main .main-container-02 .second-container-content {
@@ -800,7 +806,7 @@ main .main-container-02 .second-container-content .second-container-article .art
 }
 @media screen and (min-width: 1100px) {
   main .main-container-02 .second-container-content .second-container-article .article-container {
-    padding: 10px 10px 80px;
+    padding: 10px 0px 80px 10px;
     grid-template-columns: 310px 1fr;
   }
 }
@@ -1005,18 +1011,13 @@ main .main-container-02 .second-container-content .second-container-article .art
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 40px 20px 60px 20px;
+  padding-block: 40px;
 }
-@media screen and (min-width: 1100px) {
-  main .main-container-02 .second-container-content .second-container-article .article-next-prev {
-    padding: 40px 0 0 0;
-  }
-}
-main .main-container-02 .second-container-content .second-container-article .article-next-prev span {
+main .main-container-02 .second-container-content .second-container-article .article-next-prev .article-page {
   font-size: 0.9rem;
   color: #19065E;
 }
-main .main-container-02 .second-container-content .second-container-article .article-next-prev button {
+main .main-container-02 .second-container-content .second-container-article .article-next-prev #article-prev-btn, main .main-container-02 .second-container-content .second-container-article .article-next-prev #article-next-btn {
   position: relative;
   display: flex;
   justify-content: center;
@@ -1029,15 +1030,15 @@ main .main-container-02 .second-container-content .second-container-article .art
   background-image: linear-gradient(90deg, #6F04D9, #19065E);
   padding: 8px 20px;
 }
-main .main-container-02 .second-container-content .second-container-article .article-next-prev button:hover::after {
+main .main-container-02 .second-container-content .second-container-article .article-next-prev #article-prev-btn:hover::after, main .main-container-02 .second-container-content .second-container-article .article-next-prev #article-next-btn:hover::after {
   bottom: -60%;
   animation-play-state: running;
 }
-main .main-container-02 .second-container-content .second-container-article .article-next-prev button span {
+main .main-container-02 .second-container-content .second-container-article .article-next-prev #article-prev-btn span, main .main-container-02 .second-container-content .second-container-article .article-next-prev #article-next-btn span {
   font-weight: 500;
   color: #F9F9F9;
 }
-main .main-container-02 .second-container-content .second-container-article .article-next-prev button::after {
+main .main-container-02 .second-container-content .second-container-article .article-next-prev #article-prev-btn::after, main .main-container-02 .second-container-content .second-container-article .article-next-prev #article-next-btn::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1052,6 +1053,10 @@ main .main-container-02 .second-container-content .second-container-article .art
   animation-play-state: paused;
   transition: bottom 0.3s;
 }
+main .main-container-02 .second-container-content .second-container-article .article-next-prev .button-disabled {
+  opacity: 0;
+  pointer-events: none;
+}
 main .main-container-02 .second-container-content .second-container-aside {
   grid-area: aside-area;
   display: none;
@@ -1063,7 +1068,7 @@ main .main-container-02 .second-container-content .second-container-aside {
     justify-content: center;
     align-items: center;
     justify-content: initial;
-    padding: 10px 10px 80px 0;
+    padding: 10px 10px 10px 0px;
   }
 }
 main .main-container-02 .second-container-content .second-container-aside .aside-section-01 {
@@ -1647,6 +1652,33 @@ footer .footer-container-03 .footer-wave-03 {
   transform: translateY(100px);
 }
 
+.loading-api-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F9F9F9;
+  transition: opacity 0.4s;
+}
+.loading-api-container .loading-api-spinner {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid;
+  border-color: transparent;
+  border-inline-color: #6F04D9;
+  animation: spinner 3s infinite linear;
+}
+
+.loading-api-container-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 @keyframes fade-slider {
   0% {
     opacity: 0.4;
@@ -1669,5 +1701,13 @@ footer .footer-container-03 .footer-wave-03 {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=style.css.map */
